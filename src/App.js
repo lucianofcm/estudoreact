@@ -45,13 +45,27 @@ class App extends Component {
     }
 
 
-
     render() {
 
         let pessoas = null;
-        if(this.state.showPessoas) {
+        if (this.state.showPessoas) {
             pessoas = (
                 <div>
+                    {
+
+                        this.state.pessoas.map(pessoa => {
+
+                            return <Person nome={pessoa.nome} idade={pessoa.idade}
+                                           sexo="Masculino"
+                                           mudar={this.renomearNome}>Eu sou o
+                                filho</Person>
+                        })
+
+
+                    }
+                </div>
+
+                /*<div>
                     <Person nome={this.state.pessoas[0].nome} idade={this.state.pessoas[0].idade}
                             sexo="Masculino">Eu
                         sou o
@@ -65,7 +79,7 @@ class App extends Component {
                             mudar={this.renomearNome}>Eu sou o
                         filho</Person>
 
-                </div>
+                </div>*/
 
             );
         }
@@ -77,7 +91,7 @@ class App extends Component {
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
                 <p className="App-intro">
-                    To get started, edit <code>src/App.js</code> and save to reload.
+
                 </p>
                 <button onClick={this.trocarNome.bind(this, 'teste', 55)}>Trocar Nome</button>
                 <button onClick={() => this.trocarNome('Segunda forma', 55)}>Trocar Nome Segunda forma</button>
