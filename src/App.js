@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Person from './Person/Person'
+import Person from './Person/Person';
+import rootRef from './Firebase'
 
 class App extends Component {
     state = {
@@ -44,11 +45,33 @@ class App extends Component {
 
     }
 
+     data = {
+        stringExample: 'Hello, World!',
+        booleanExample: true,
+        numberExample: 3.14159265,
+        dateExample: new Date('December 10, 1815'),
+        arrayExample: [5, true, 'hello'],
+        nullExample: null,
+        tarefas: {
+            nome: 'Pagar boleto',
+            b: true
+        }
+    };
+
 
     render() {
 
         let pessoas = null;
         if (this.state.showPessoas) {
+            let refa = rootRef.collection('usuarios').doc('teste2');
+            rootRef.collection('usuarios').doc('3').set(this.data);
+            let setAda = refa.set({
+                nome: 'LUCIANO',
+                last: 'MUniz',
+                born: 1975
+            });
+
+
             pessoas = (
                 <div>
                     {
