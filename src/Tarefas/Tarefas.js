@@ -58,7 +58,7 @@ class Tarefas extends Component {
         -webkit-margin-end: 0px; */
     };
     divStyleCard = {
-        width: '25%',
+        width: '13%',
         margin: '0 auto'
     }
 
