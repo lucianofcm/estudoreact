@@ -1,13 +1,9 @@
-h1, p {
+h1,
+p {
     font-family: Lato;
 }
 
 .bd-example {
     position: relative;
     padding: 1rem;
-    margin: 1rem (-$ grid-gutter-width / 2) 0;
-    border: solid $ gray-100;
-    border-width: .2rem 0 0;
-@include clearfix()
 }
-
