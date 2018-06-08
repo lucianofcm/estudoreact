@@ -4,6 +4,9 @@ import './App.css';
 import Person from './Person/Person';
 import rootRef from './Firebase'
 import Tarefas from './Tarefas/Tarefas'
+import DataTable from './components/DataTable'
+import ReactTable from "react-table";
+import "react-table/react-table.css";
 
 class App extends Component {
     /*  state = {
