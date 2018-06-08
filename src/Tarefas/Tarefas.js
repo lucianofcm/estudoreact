@@ -1,6 +1,10 @@
 import React, {Component} from "react";
 import "./Tarefas.css";
 import rootRef from "../Firebase";
+import DataTable from "../components/DataTable";
+import ReactTable from "react-table";
+import "react-table/react-table.css";
+import { render } from "react-dom";
 
 class Tarefas extends Component {
     constructor() {
@@ -164,8 +168,8 @@ class Tarefas extends Component {
                         <input class="btn btn-primary" type="submit" value="submit"/>
                     </form>
                 </div>
-                <div style={this.divStyleForm}>
-                    {resultado}
+                 <div style={this.divStyleForm}>
+                    <DataTable></DataTable>
                 </div>
             </div>
         )
