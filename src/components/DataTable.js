@@ -24,9 +24,9 @@ class DataTable extends Component {
         });
       });
     return tarefasPersistidas;
-  }
+  };
 
-  renderEditable = (cellInfo) => {
+  renderEditable = cellInfo => {
     return (
       <div
         style={{ backgroundColor: "#eee" }}
@@ -42,9 +42,9 @@ class DataTable extends Component {
         }}
       />
     );
-  }
+  };
   render() {
-       const { data } = this.state;
+    const { data } = this.state;
     return (
       <div>
         <ReactTable
@@ -61,6 +61,17 @@ class DataTable extends Component {
               Cell: this.renderEditable
             },
             {
+               Header: "Full Name",
+              id: "full",
+              accessor: d => (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: d.status?'Realizada':'Não Realizada'
+                  }}
+                />
+              )
+            }
+            /*{
               Header: "Full Name",
               id: "full",
               accessor: d => (
@@ -70,13 +81,12 @@ class DataTable extends Component {
                   }}
                 />
               )
-            }
+            }*/
           ]}
           defaultPageSize={10}
           className="-striped -highlight"
         />
         <br />
-        
       </div>
     );
   }
